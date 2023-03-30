@@ -25,5 +25,6 @@ urlpatterns = [
     path('', index, name='index'),
     re_path(r'^catalog', show_catalog, name='catalog'),
     # path('product/<slug:slug>/', show_product, name='product'),
-    path('catalog/<slug:slug>/', show_product, name='phone'),
+    # path('catalog/<slug:slug>/', show_product, name='phone'),
+    path('catalog/<slug>/', show_product, name='phone')
 ]
