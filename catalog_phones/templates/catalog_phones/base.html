@@ -1,0 +1,22 @@
+{% load static %}
+
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <!--Import Google Icon Font-->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <link type="text/css" rel="stylesheet" href="{% static 'catalog_phones/css/bootstrap.css' %}" media="screen,projection"/>
+    <link type="text/css" href="{% static 'catalog_phones/css/style.css' %}" rel="stylesheet" />
+    <meta http-equiv="Content-Type" content="text/html; chrset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+{% block content %}{% endblock %}
+
+
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="{% static 'catalog_phones/js/bootstrap.js' %}"></script>
+</body>
+</html>
