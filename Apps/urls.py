@@ -17,14 +17,12 @@ from django.contrib import admin
 from django.urls import path
 
 import catalog_phones
-from catalog_phones.views import *
+from catalog_phones.views import show_catalog, index, show_product
 from django.urls import re_path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
     re_path(r'^catalog', show_catalog, name='catalog'),
-    # path('product/<slug:slug>/', show_product, name='product'),
-    # path('catalog/<slug:slug>/', show_product, name='phone'),
-    path('catalog/<slug>/', show_product, name='phone')
+    path('catalog/<slug:slug>/', show_product, name='phone'),
 ]
