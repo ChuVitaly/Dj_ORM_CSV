@@ -8,6 +8,7 @@ from catalog_phones.models import Phone
 
 
 class ImportPhoneCommand(BaseCommand):
+    help = 'Import phones from csv file'
 
     def handle(self, *args, **options):
         with open('phones.csv', 'r', encoding='utf-8') as file:
@@ -21,3 +22,4 @@ class ImportPhoneCommand(BaseCommand):
                 phone.lte_exists = row['lte_exists'].lower() == 'true'
                 phone.slug = slugify(phone.name)
                 phone.save()
+        self.stdout.write(self.style.SUCCESS('Phones were imported successfully'))
