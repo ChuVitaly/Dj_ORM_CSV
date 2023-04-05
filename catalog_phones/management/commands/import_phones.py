@@ -6,12 +6,13 @@ from django.template.defaultfilters import slugify
 
 from catalog_phones.models import Phone
 
-
-class ImportPhoneCommand(BaseCommand):
+class Command(BaseCommand):
     help = 'Import phones from csv file'
+    def add_arguments(self, parser):
+        parser.add_argument('phones.csv', type=str, help='CSV file path for import')
 
     def handle(self, *args, **options):
-        with open('phones.csv', 'r', encoding='utf-8') as file:
+        with open('phones.csv', 'r') as file:
             reader = csv.DictReader(file, delimiter=';')
             for row in reader:
                 phone = Phone()
